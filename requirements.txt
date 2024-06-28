@@ -1,4 +1,3 @@
 streamlit==1.35.0
 transformers==4.42.2
 tokenizers==0.19.1
-tensowflow==2.11.0
