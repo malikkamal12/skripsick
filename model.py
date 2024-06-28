@@ -86,7 +86,12 @@ if st.button('Analyze'):
         st.markdown("<h3 style='text-align: left;'>Predicted Emotions:</h3>", unsafe_allow_html=True)
 
         # Initialize pipeline for text classification using the NusaBERT model
+        # Attempt to load the model
+    try:
         classifier = pipeline("text-classification", model="Aardiiiiy/NusaBERT-base-Indonesian-Plutchik-emotion-analysis")
+        print("Model loaded successfully")
+    except Exception as e:
+        print(f"Error loading model: {e}")
 
         # Perform prediction
         predictions = classifier([input_text], return_all_scores=True)
